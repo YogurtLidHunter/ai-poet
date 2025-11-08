@@ -1,11 +1,11 @@
-from langchain.chat_models import init_chat_model
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
-#from dotenv import load_dotenv
-#load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
-llm = init_chat_model("gpt-4o-mini", model_provider="openai")
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a Fucking unhelpful assistant"),
